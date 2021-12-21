@@ -1,0 +1,70 @@
+<%= render "shared/header" %>
+<head>
+</head>
+<body>
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんのマイページ"%>
+      </h2>
+<div class="link-btn">
+<%= link_to("#", class: 'baby-btn') do %>
+  <span class='baby-btn-text'>他のユーザーの思い出を見るボタン</span>
+  <%= image_tag 'sample.png' ,class: "baby-btn-icon" %>
+<% end %>
+
+<%= link_to(items_path, class: 'baby-btn') do %>
+  <span class='baby-btn-text'>みんなのお下がりを見るボタン</span>
+  <%= image_tag 'sample.png' ,class: "baby-btn-icon" %>
+<% end %>
+
+</div>
+
+<h2 class="page-heading">
+  <%= "#{@user.nickname}さんの家族"%>
+</h2>
+
+<div class="btn">
+<% @babies.each do |baby| %>
+
+  <%= link_to baby_articles_path(baby.id) do %>
+  <div class='baby-photo-btn'>
+    <%= image_tag baby.image, class: "baby-img" %>
+    </div>
+  <% end %>
+
+<% end %>
+
+<%= link_to(new_baby_path, class: 'baby-btn') do %>
+  <span class='baby-btn-text'>家族の追加</span>
+  <%= image_tag 'sample.png' ,class: "baby-btn-icon" %>
+<% end %>
+
+ </div>
+
+
+<h2 class="page-heading">
+  <%= "#{@user.nickname}さんからのお下がり"%>
+</h2>
+ <div class="btn">
+
+<% @items.each do |item| %>
+
+  <%= link_to item_path(item.id) do %>
+  <div class='baby-photo-btn'>
+    <%= image_tag item.image, class: "baby-img" %>
+    </div>
+  <% end %>
+
+<% end %>
+
+  <%= link_to(new_item_path, class: 'baby-btn') do %>
+  <span class='baby-btn-text'>出品する</span>
+  <%= image_tag 'sample.png' ,class: "baby-btn-icon" %>
+  <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

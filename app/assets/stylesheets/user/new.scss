@@ -1,0 +1,44 @@
+body {
+  background-color: tomato;
+  padding-bottom: 10vh;
+}
+
+.wrapper {
+  background-image: image-url('top.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  object-position: 50% 50%;
+  position: relative;
+}
+
+.button {
+  position: absolute;
+  color:#ffffff;
+  top: 40vh;
+  left: 60vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.babiew-logo {
+  width: 20vw;
+}
+
+.sign-up-new {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: tomato;
+  padding: 7px;
+  height: 40px;
+  width: 200px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.sign-in-new {
+  margin: 5px;
+}

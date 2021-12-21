@@ -1,0 +1,75 @@
+.wrapper-signup {
+  background-color: tomato;
+  height: 120vh;
+  padding: 5vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+}
+
+.baview-logo-signin{
+  height: 10vh;
+  margin: 20px 0px 10px 0px;
+}
+
+.registration-main{
+  background-color: #fff;
+  padding: 30px;
+  width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.baby-main{
+  background-color: #fff;
+  padding: 30px;
+  width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.form-header-text{
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.indispensable {
+  color: red;
+}
+
+.form-text {
+  margin-bottom: 10px;
+}
+
+.btn-contents{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-contents {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.submit-btn {
+  text-decoration: none;
+  border: none;
+  color: blue;
+  background-color:skyblue;
+  padding: 7px;
+  height: 40px;
+  width: 200px;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+

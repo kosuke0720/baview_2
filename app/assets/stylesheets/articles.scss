@@ -1,0 +1,76 @@
+.user__wrapper {
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.baby-btn {
+  width: 150px;
+  height: 150px;
+  background: pink;
+  text-align: center;
+  border-radius: 30px;
+  padding: 15px;
+  text-decoration: none;
+  margin: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.baby-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  text-align: center;
+  border-radius: 30px;
+  margin: 30px 15px;
+}
+
+.baby-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.baby-btn-icon {
+  width: 80px;
+}
+
+.content-box-img {
+  margin-top: 20px;
+  height: 50vh;
+  width: 80vw;
+  height: 500px;
+  background-color: white;
+  object-fit: contain;
+}
+
+.input-date-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.weight-bold-text {
+  text-align: left;
+  font-weight: 900;
+  margin-bottom: 10px;
+  margin-left: 10vh;
+}
+
+
+.back-btn {
+  margin-top: 30px;
+}
+
+.content-text {
+  width: 50vw;
+  text-align: justify;
+  margin: 20px auto;
+}
+
+.delete-btn{
+  margin-top: 10px;
+}

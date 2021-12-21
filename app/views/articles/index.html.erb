@@ -1,0 +1,28 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+<h2 class="page-heading">
+  <%= "#{@baby.baby_name}さんの思い出"%>
+</h2>
+
+<div class="btn">
+
+  <%= link_to(new_baby_article_path, class: 'baby-btn') do %>
+    <span class='baby-btn-text'>思い出の追加</span>
+    <%= image_tag 'sample.png' ,class: "baby-btn-icon" %>
+  <% end %>
+
+  <% @articles.each do |article| %>
+  <%= link_to baby_article_path(@baby.id,article.id) do %>
+  <div class='baby-photo-btn'>
+    <%= image_tag article.image, class: "baby-img" %>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+      <%=link_to 'もどる', user_path(@baby.user.id), class:"back-btn" %>
+    </div>
+  </div>
+</div>

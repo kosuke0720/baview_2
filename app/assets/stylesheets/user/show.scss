@@ -1,0 +1,67 @@
+.main {
+  margin-top: 10vh;
+  background-color: tomato;
+  min-height: 100vh;
+}
+
+.user__wrapper {
+  background-color: white;
+  width: 95vw;
+  margin-left: 2.5vw;
+  margin-bottom: 30px;
+  border-radius: 30px;
+
+}
+
+.link-btn {
+  display: flex;
+  flex-direction: row;
+}
+
+.page-heading {
+  color: #fff;
+  padding: 10px 30px;
+  height: 7vh;
+  width: 95vw;
+  border-radius: 30px 30px 0px 0px;
+  background-color: skyblue;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+}
+
+.baby-btn {
+  width: 150px;
+  height: 150px;
+  background: pink;
+  text-align: center;
+  border-radius: 30px;
+  padding: 15px;
+  text-decoration: none;
+  margin: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.baby-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  text-align: center;
+  border-radius: 30px;
+  margin: 30px 15px;
+}
+
+.baby-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.baby-btn-icon {
+  width: 80px;
+}

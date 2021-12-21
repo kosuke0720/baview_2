@@ -1,0 +1,39 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  <div class="user__wrapper">
+    <div class="page-heading">
+      <span><%= @item.user.nickname %>さんからのお下がり</span>
+    </div>
+    <div class="item-detail">
+    <div class="content-img">
+      <%= image_tag @item.image ,class:"content-box-img" %>
+    </div>
+    <div class="item-name" >
+    <h1><%= @item.item_name %></h1>
+    </div>
+    <div>
+      <%= @item.price %>円
+    </div>
+    <div>
+      送料：<%= @item.send_fee.name %>
+    </div>
+    <div class="content-text">
+      <span><%= simple_format(h(@item.introduce)) %></span>
+    </div>
+
+    <div class="submit-btn">
+      <%= link_to "購入する", item_orders_path(@item.id) %>
+    </div>
+
+    <div>
+      <%=link_to 'もどる', :back, class:"back-btn" %>
+    </div>
+
+    <% if user_signed_in? && current_user.id == @item.user.id %>
+      <%=link_to '削除', item_path(@item.id),method: :delete, class:"delete-btn" %>
+    <% else %>
+    <% end %>
+      </div>
+    </div>
+</div>

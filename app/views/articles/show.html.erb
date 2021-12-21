@@ -1,0 +1,21 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  <div class="user__wrapper">
+    <div class="page-heading">
+    <span><%= @article.content_date %></span>
+  </div>
+    <div class="content-img">
+      <%= image_tag @article.image ,class:"content-box-img" %>
+    </div>
+     <div class="content-text">
+      <span><%= simple_format(h(@article.content)) %></span>
+    </div>
+    <%=link_to 'もどる', baby_articles_path(@baby.id), class:"back-btn" %>
+
+      <% if user_signed_in? && current_user.id == @baby.user.id %>
+      <%=link_to '削除', baby_article_path(@baby.id, @article.id),method: :delete, class:"delete-btn" %>
+      <% else %>
+      <% end %>
+
+</div>

@@ -1,0 +1,24 @@
+/* signup.cssと一部共通、独自の部分のみ新規記述 */
+
+.wrapper-signin {
+  background-color: tomato;
+  height: 100vh;
+  padding: 5vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+}
+
+.login-red-btn {
+  text-decoration: none;
+  border: none;
+  color: blue;
+  background-color:skyblue;
+  padding: 7px;
+  height: 40px;
+  width: 200px;
+  border-radius: 10px;
+  margin: 5px;
+  margin-top: 30px;
+}

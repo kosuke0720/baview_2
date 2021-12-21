@@ -1,0 +1,27 @@
+<%= render "shared/header" %>
+
+<div class="main">
+<div class="user__wrapper">
+
+<div class="page-heading">
+  <h2>みんなのお下がり</h2>
+</div>
+
+<div class="link-btn">
+<% @items.each do |item| %>
+
+  <%= link_to item_path(item.id) do %>
+  <div class='baby-photo-btn'>
+    <%= image_tag item.image, class: "baby-img" %>
+    </div>
+  <% end %>
+
+<% end %>
+
+</div>
+
+<%=link_to 'もどる', :back, class:"back-btn" %>
+
+</div>
+
+</div>
