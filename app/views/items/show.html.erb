@@ -22,9 +22,12 @@
       <span><%= simple_format(h(@item.introduce)) %></span>
     </div>
 
+    <% unless user_signed_in? && current_user.id == @item.user.id %>
     <div class="submit-btn">
       <%= link_to "購入する", item_orders_path(@item.id) %>
     </div>
+    <% else %>
+    <% end %>
 
     <div>
       <%=link_to 'もどる', :back, class:"back-btn" %>
