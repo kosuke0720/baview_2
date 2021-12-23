@@ -1,6 +1,6 @@
 .wrapper-signup {
   background-color: tomato;
-  height: 120vh;
+  height: 100%;
   padding: 5vh;
   display: flex;
   flex-direction: column;
