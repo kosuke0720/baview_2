@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   attr_accessor :token
   belongs_to :user  
-  has_one :items  
+  belongs_to :items  
   has_one :address 
 
   validates :token, presence: true
