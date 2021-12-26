@@ -22,11 +22,17 @@
       <span><%= simple_format(h(@item.introduce)) %></span>
     </div>
 
+    <% if @item.order.present? %>
+    <div class="sold-message">
+    <p>お下がり先が決まりました</p>
+    </div>
+    <% else %>
     <% unless user_signed_in? && current_user.id == @item.user.id %>
     <div class="submit-btn">
       <%= link_to "購入する", item_orders_path(@item.id) %>
     </div>
     <% else %>
+    <% end %>
     <% end %>
 
     <div>
