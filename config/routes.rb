@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
   root to: 'users#new'
-  resources :users, only: %i[show new] 
+  resources :users, only: %i[show new edit update] 
   
   resources :items, only: %i[index new create show destroy] do
     resources :orders, only: %i[index create]
