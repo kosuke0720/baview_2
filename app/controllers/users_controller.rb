@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
   before_action :move_to_show, only: [:new]
   before_action :move_to_mypage, only: [:show]
-  before_action :set_user, only: [:edit, :update]
 
   def show
     @user = User.find(params[:id])
-    @items = Item.where(user_id: current_user.id).includes(:user).order('created_at DESC')
-    @babies = Baby.where(user_id: current_user.id).includes(:user).order('created_at DESC')
+    @items = Item.where(user_id: @user.id).includes(:user).order('created_at DESC')
+    @babies = Baby.where(user_id: @user.id).includes(:user).order('created_at DESC')
   end
 
   def new
@@ -14,26 +13,21 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    binding.pry
   end
 
   def update
     @user = User.find(params[:id])
-    if current_user == @user
-      if @user.update(user_params)
-       redirect_to user_path(@user.id)
-      else
-       render :edit
-      end
-    else
-      redirect_to user_path(current_user.id)
-    end
+  if @user.update(user_params)
+    redirect_to user_path(@user.id)
+  else
+    render :edit
+  end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:nickname,:email,:password ,:password_confirmation )
+    params.require(:user).permit(:nickname,:email ,:password_confirmation )
    end
 
   def move_to_show
@@ -47,10 +41,6 @@ class UsersController < ApplicationController
     unless @user.id == current_user.id
       redirect_to user_path(@user.id)
     end
-  end
-
-  def set_user
-    @user = current_user || User.new
   end
 
 end
