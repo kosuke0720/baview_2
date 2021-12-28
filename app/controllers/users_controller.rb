@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :move_to_show, only: [:new]
   before_action :move_to_mypage, only: [:show]
+  before_action :set_user, only: [:edit, :update]
 
   def show
     @user = User.find(params[:id])
@@ -13,14 +14,19 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    binding.pry
   end
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to user_path(@user.id)
+    if current_user == @user
+      if @user.update(user_params)
+       redirect_to user_path(@user.id)
+      else
+       render :edit
+      end
     else
-      render :edit
+      redirect_to user_path(current_user.id)
     end
   end
 
@@ -38,9 +44,13 @@ class UsersController < ApplicationController
 
   def move_to_mypage
     @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to user_path(current_user.id)
+    unless @user.id == current_user.id
+      redirect_to user_path(@user.id)
     end
+  end
+
+  def set_user
+    @user = current_user || User.new
   end
 
 end
