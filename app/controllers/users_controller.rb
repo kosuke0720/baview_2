@@ -19,16 +19,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     binding.pry
   if @user.update(user_params)
+    bypass_sign_in(@user) 
     redirect_to user_path(@user.id)
   else
-    render :edit
+    render edit_user_registration_path
   end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:nickname,:email)
+    params.require(:user).permit(:nickname,:email,:password, :password_confirmation)
    end
 
   def move_to_show
@@ -40,7 +41,7 @@ class UsersController < ApplicationController
   def move_to_mypage
     @user = User.find(params[:id])
     unless @user.id == current_user.id
-      redirect_to user_path(@user.id)
+      redirect_to user_path(current_user.id)
     end
   end
 
