@@ -24,7 +24,6 @@ end
 
  def destroy
   @item = Item.find(params[:id])
-  @user = User.find(params[:id])
   @item.destroy
   redirect_to user_path(current_user.id)
 end
