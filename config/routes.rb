@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :orders, only: %i[index create]
   end
 
-  resources :babies, only: %i[new create] do
+  resources :babies, only: %i[new create destroy] do
     resources :articles, only: %i[index show new create destroy]
   end
 
