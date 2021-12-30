@@ -17,7 +17,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    binding.pry
   if @user.update(user_params)
     bypass_sign_in(@user) 
     redirect_to user_path(@user.id)
