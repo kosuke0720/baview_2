@@ -15,6 +15,13 @@ class BabiesController < ApplicationController
     end
   end
 
+  def destroy
+    @baby = Baby.find(params[:id])
+    @user = User.find(params[:id])
+    @baby.destroy
+    redirect_to user_path(current_user.id)
+  end
+
   private
 
   def baby_params
