@@ -27,6 +27,21 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def edit
+    @baby = Baby.find(params[:baby_id])
+    @article = Article.find(params[:id])
+  end
+  
+  def update
+    @baby = Baby.find(params[:baby_id])
+    @article = Article.find(params[:id])
+  if @article.update(article_params)
+    redirect_to baby_article_path(@baby.id , @article.id)
+  else
+    render :edit
+  end
+  end
+
   def destroy
     @baby = Baby.find(params[:baby_id])
     @article = Article.find(params[:id])
