@@ -1,0 +1,73 @@
+<%= render "shared/header" %>
+
+<body>
+  <div class="main">
+    <div class="user__wrapper">
+    <div class="page-heading">
+      <%= "思い出の編集する" %>
+      </div>
+      <div class="form-main">
+          <%= form_with model: [@baby, @article], url:baby_article_path(@baby.id,@article.id) ,class: 'registration-main', local: true do |f| %>
+             <%= render 'shared/error_messages', model: f.object %>
+
+<%# 思い出の画像 %>
+    <div class="form-group">
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        思い出の写真
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    </div>
+<%# 思い出の画像 %>
+<%# 思い出の日付 %>
+
+<div class="form-group">
+        <div class="weight-bold-text">
+          思い出の日付 <span class="indispensable">必須</span>
+        </div>
+    <div class='input-date-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :content_date,
+                    class:'select-date',
+                    id:"content-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: (Time.now.year - 10),
+                    end_year: (Time.now.year),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+</div>
+<%# 思い出の日付 %>
+<%# 思い出の詳細 %>
+<div class="form-group">
+    <div class="new-items">
+      <div class="weight-bold-text">
+        思い出
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :content, class:"babies-text", id:"content",size: "40x10" %>
+    </div>
+</div>
+<%# 思い出の詳細 %>
+<%# 下部ボタン %>
+    <div class="btn-contents">
+      <%= f.submit "編集を完了する" ,class:"submit-btn" %>
+      <%=link_to 'もどる', baby_articles_path(@baby.id), class:"back-btn" %>
+    </div>
+<%# /下部ボタン %>
+        </div>
+        </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>
