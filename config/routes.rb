@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     resources :orders, only: %i[index create]
   end
 
-  resources :babies, only: %i[new create destroy] do
-    resources :articles, only: %i[index show new create destroy]
+  resources :babies, only: %i[new create destroy update edit] do
+    resources :articles
   end
 
 end
