@@ -24,7 +24,8 @@
   </div>
       <%=link_to 'もどる', user_path(@baby.user.id), class:"back-btn" %>
     <% if user_signed_in? && current_user.id == @baby.user.id %>
-      <%=link_to '赤ちゃんの情報の削除', baby_path(@baby.id),method: :delete, class:"delete-btn" %>
+      <%=link_to '家族の情報の編集', edit_baby_path(@baby.id), class:"delete-btn" %>
+      <%=link_to '家族の情報の削除', baby_path(@baby.id),method: :delete, class:"delete-btn" %>
     <% else %>
     <% end %>
     </div>
