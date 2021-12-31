@@ -1,0 +1,82 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  <div class="user__wrapper">
+    <div class="page-heading">
+      <h2>お下がり情報の編集</h2>
+    </div>
+    <%= form_with model: @item, url: item_path,class: 'registration-main',local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+<div class="form-group">
+        <div class="img-upload">
+      <div class="weight-bold-text">
+        商品画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+</div>
+
+<div class="form-group">
+       <div class="weight-bold-text">
+        商品名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" ,size: "40x1"%>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          商品の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :introduce, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）1回だけ来てサイズが合わなかった女の子用の洋服です。３歳児用サイズでしたが、割とゆったりとした作りになっています。",maxlength:"1000",size: "40x10" %>
+      </div>
+</div>
+
+<div class="form-group">
+       <div class="weight-bold-text">
+        価格
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="price-input">
+      <%= f.text_area :price , id:"item-price", placeholder:"〜50,000", maxlength:"40" ,size: "20x1"%><p>&nbsp;&nbsp;円</p>
+      </div>
+</div>
+
+<div class="form-group">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+</div>
+<div class="form-group">
+        <div class="weight-bold-text">
+        商品の状態
+        <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:items_status_id, ItemsStatus.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+</div>
+
+<div class="form-group">
+        <div class="weight-bold-text">
+          配送料の負担
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:send_fee_id, SendFee.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+</div>
+
+    <div class="btn-contents">
+      <%= f.submit "上書きする" ,class:"submit-btn" %>
+      <%=link_to 'もどる',:back, class:"back-btn" %>
+    </div>
+
+    <% end %>
+  </div>
+</div>
