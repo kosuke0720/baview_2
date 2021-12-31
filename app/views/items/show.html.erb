@@ -40,6 +40,7 @@
     </div>
 
     <% if user_signed_in? && current_user.id == @item.user.id %>
+    <%=link_to 'お下がり情報の編集', edit_item_path(@item.id), class:"delete-btn" %>
       <%=link_to '削除', item_path(@item.id),method: :delete, class:"delete-btn" %>
     <% else %>
     <% end %>
