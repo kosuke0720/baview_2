@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     bypass_sign_in(@user) 
     redirect_to user_path(@user.id)
   else
-    render edit_user_registration_path
+    render :edit
   end
   end
 
