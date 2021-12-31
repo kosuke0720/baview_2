@@ -15,6 +15,19 @@ class BabiesController < ApplicationController
     end
   end
 
+  def edit
+    @baby = Baby.find(params[:id])
+  end
+  
+  def update
+    @baby = Baby.find(params[:id])
+  if @baby.update(baby_params)
+    redirect_to user_path(current_user.id)
+  else
+    render :edit
+  end
+  end
+
   def destroy
     @baby = Baby.find(params[:id])
     @user = User.find(params[:id])
