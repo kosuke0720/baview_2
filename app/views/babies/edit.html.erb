@@ -1,0 +1,71 @@
+<%= render "shared/header" %>
+
+<div>
+  <div class="main">
+  <div class="user__wrapper">
+    <h2 class="page-heading">家族の情報の編集</h2>
+    <%= form_with model: @baby, url: baby_path(@baby.id),class: 'registration-main',local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 家族の画像 %>
+<div class="form-group">
+  <div class="img-upload">
+    <div class="weight-bold-text">
+        家族の写真
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+</div>
+    <%# 家族の画像 %>
+
+    <%# 家族の詳細 %>
+    <div class="form-group">
+    <div class="new-items">
+      <div class="weight-bold-text">
+        お名前
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :baby_name, class:"babies-text", id:"baby-name", placeholder:"お名前（必須 40文字まで)", maxlength:"40" %>
+      </div>
+      <div class="form-group">
+      <div class="baby-explain">
+    <div class='form-text-wrap'>
+<div class="weight-bold-text">
+      <label class="form-text">生年月日</label>
+      <span class="indispensable">必須</span>
+</div>
+    </div>
+    <div class='input-date-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :birth_date,
+                    class:'select-date',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: (Time.now.year - 10),
+                    end_year: (Time.now.year),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+      </div>
+    </div>
+    <%# 家族の詳細 %>
+
+    <%# 下部ボタン %>
+    <div class="btn-contents">
+      <%= f.submit "登録する" ,class:"submit-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+</div>
+</div>
