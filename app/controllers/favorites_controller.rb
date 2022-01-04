@@ -5,9 +5,7 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @favorite = Favorite.new
-    @article = Article.find(:id)
-    @baby = Baby.find(:baby_id)
+    favorite = current_user.Favorite.new(post_id: clicked_post.id)
     if @favorite.save
       redirect_to baby_article_path(@baby.id, @article.id)
     else
