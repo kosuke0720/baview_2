@@ -15,4 +15,10 @@ class FavoritesController < ApplicationController
   def destroy
   end
 
+  private
+
+  def clicked_post
+    Article.find(params[:article_id])
+  end
+
 end
