@@ -4,7 +4,10 @@
   <div class="user__wrapper">
     <div class="page-heading">
     <span><%= @article.content_date %></span>
-    <%= link_to '♡', favorites_path, class:"before_fav" %>
+    <%= form_with(model: @like, url: likes_path, local: true) do |f| %>
+          <%= f.hidden_field :post_id, value: post.id %>
+          <%= f.submit '♡' %>
+        <% end %> 
   </div>
     <div class="content-img">
       <%= image_tag @article.image ,class:"content-box-img" %>
