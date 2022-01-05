@@ -5,8 +5,8 @@
     <div class="page-heading">
     <span><%= @article.content_date %></span>
 
-    <%= form_with(model: @favorite, url: favorites_path, method: :post, local: true) do |f| %>
-          <%= f.hidden_field :article_id, value: article.id %>
+    <%= form_with(model: @favorite, url: new_favorite_path, method: :post, local: true) do |f| %>
+          <%= f.hidden_field :article_id, value: @article.id %>
           <%= f.submit '♡' %>
     <% end %> 
 
