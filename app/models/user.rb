@@ -13,4 +13,5 @@ class User < ApplicationRecord
   has_many :babies
   has_many :items
   has_many :favorites  
+  has_many :favorite_articles, through: :favorites, source: :article
 end
