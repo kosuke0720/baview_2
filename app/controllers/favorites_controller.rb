@@ -2,6 +2,7 @@ class FavoritesController < ApplicationController
 
   def new
     @favorite = Favorite.new
+    @article = Article.find(@favorite.article.id)
   end
 
   def create
