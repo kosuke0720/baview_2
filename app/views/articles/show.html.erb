@@ -4,10 +4,12 @@
   <div class="user__wrapper">
     <div class="page-heading">
     <span><%= @article.content_date %></span>
-    <%= form_with(model: @favorite, url: favorites_path, local: true) do |f| %>
-          <%= f.hidden_field :post_id, value: post.id %>
+
+    <%= form_with(model: @favorite, url: favorites_path, method: :post, local: true) do |f| %>
+          <%= f.hidden_field :article_id, value: article.id %>
           <%= f.submit '♡' %>
-        <% end %> 
+    <% end %> 
+
   </div>
     <div class="content-img">
       <%= image_tag @article.image ,class:"content-box-img" %>
