@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
 
   def create
-    @favorite = current_user.Favorite.new(article_id: clicked_article.id)
+    @favorite = current_user.favorites.new(article_id: clicked_article.id)
     if @favorite.save
       redirect_back(fallback_location: root_path)
     else
