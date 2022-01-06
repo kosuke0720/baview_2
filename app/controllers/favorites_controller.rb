@@ -1,10 +1,5 @@
 class FavoritesController < ApplicationController
 
-  def new
-    @favorite = Favorite.new
-    @article = Article.find(@favorite.article.id)
-  end
-
   def create
     @favorite = current_user.Favorite.new(article_id: clicked_article.id)
     if @favorite.save
