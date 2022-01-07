@@ -19,6 +19,10 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
+
+    current_user.favorites.find_by(article_id: params[:article_id]).destroy
+    redirect_back(fallback_location: root_path)
+
   end
 
   private
