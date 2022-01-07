@@ -7,7 +7,6 @@ class FavoritesController < ApplicationController
 
     else
 
-      binding.pry
       @favorite = current_user.favorites.new(article_id: clicked_article.id)
       if @favorite.save
         redirect_back(fallback_location: root_path)
