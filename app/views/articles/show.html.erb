@@ -8,12 +8,14 @@
 <% if Favorite.find_by(user_id: current_user.id, article_id: @article.id) %>
     <%= form_with(model: @favorite, url: favorite_path(@article.id), local: true, method: :delete) do |f| %>
           <%= f.hidden_field :article_id, value: @article.id %>
-          <%= f.submit '★' class:"after-fav"%>
+          <%= f.submit '★', class:"after-fav"%>
+          <%= @favorites_count %><%= "いいね！" %>
     <% end %>
 <% else %>
     <%= form_with(model: @favorite, url: favorites_path, method: :post, local: true) do |f| %>
           <%= f.hidden_field :article_id, value: @article.id %>
-          <%= f.submit '☆' class:"before-fav"%>
+          <%= f.submit '☆', class:"before-fav"%>
+          <%= @favorites_count %><%= "いいね！" %>
     <% end %> 
 <% end %>
 
