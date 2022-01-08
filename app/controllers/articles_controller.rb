@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
   def show
     @baby = Baby.find(params[:baby_id])
     @article = Article.find(params[:id])
+    @favorites_count = Favorite.where(article_id: @article.id).count
   end
 
   def edit
