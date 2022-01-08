@@ -32,11 +32,23 @@
 }
 
 .before-fav{
-
+  text-decoration: none;
+  border: none;
+  color: white;
+  background-color:tomato;
+  width: 25px;
+  border-radius: 50%;
+  margin-left: 20px;
 }
 
 .after-fav{
-  
+  text-decoration: none;
+  border: none;
+  color: tomato;
+  background-color: white;
+  width: 25px;
+  border-radius: 50%;
+  margin-left: 20px;
 }
 
 .btn {
