@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-
+    @category = Category.all
     @item2 = Item.where(category_id: '2')
     @item3 = Item.where(category_id: '3')
     @item4 = Item.where(category_id: '4')
@@ -11,7 +11,6 @@ class ItemsController < ApplicationController
     @item8 = Item.where(category_id: '8')
     @item9 = Item.where(category_id: '9')
     @item10 = Item.where(category_id: '10')
-
   end
 
  def new
