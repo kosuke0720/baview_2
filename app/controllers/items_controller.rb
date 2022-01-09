@@ -1,7 +1,17 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.all
+
+    @item2 = Item.where(category_id: '2')
+    @item3 = Item.where(category_id: '3')
+    @item4 = Item.where(category_id: '4')
+    @item5 = Item.where(category_id: '5')
+    @item6 = Item.where(category_id: '6')
+    @item7 = Item.where(category_id: '7')
+    @item8 = Item.where(category_id: '8')
+    @item9 = Item.where(category_id: '9')
+    @item10 = Item.where(category_id: '10')
+
   end
 
  def new
@@ -45,6 +55,11 @@ private
 
 def item_params
   params.require(:item).permit(:image,:item_name, :price, :introduce, :category_id, :items_status_id, :send_fee_id).merge(user_id: current_user.id)
- end
+end
+
+def get_category
+  @items = Item.all
+
+end
 
 end
