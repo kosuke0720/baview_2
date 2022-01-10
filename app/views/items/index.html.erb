@@ -8,8 +8,14 @@
 </div>
 
 <div class="link-btn">
-<% @items.each do |item| %>
 
+<div class="item-category">
+
+<% @item2.each do |item| %>
+
+<div>
+  <h3>女の子のお洋服</h3>
+</div>
   <%= link_to item_path(item.id) do %>
   <div class='baby-photo-btn'>
     <%= image_tag item.image, class: "baby-img" %>
@@ -17,6 +23,112 @@
   <% end %>
 
 <% end %>
+
+<% @item3.each do |item| %>
+
+<div>
+  <h3>男の子のお洋服</h3>
+</div>
+  <%= link_to item_path(item.id) do %>
+  <div class='baby-photo-btn'>
+    <%= image_tag item.image, class: "baby-img" %>
+  </div>
+  <% end %>
+
+<% end %>
+
+<% @item4.each do |item| %>
+
+<div>
+  <h3>おもちゃ</h3>
+</div>
+  <%= link_to item_path(item.id) do %>
+  <div class='baby-photo-btn'>
+    <%= image_tag item.image, class: "baby-img" %>
+  </div>
+  <% end %>
+
+<% end %>
+
+<% @item5.each do |item| %>
+
+<div>
+  <h3>家具</h3>
+</div>
+  <%= link_to item_path(item.id) do %>
+  <div class='baby-photo-btn'>
+    <%= image_tag item.image, class: "baby-img" %>
+  </div>
+  <% end %>
+
+<% end %>
+
+<% @item6.each do |item| %>
+
+<div>
+  <h3>食器</h3>
+</div>
+  <%= link_to item_path(item.id) do %>
+  <div class='baby-photo-btn'>
+    <%= image_tag item.image, class: "baby-img" %>
+  </div>
+  <% end %>
+
+<% end %>
+
+<% @item7.each do |item| %>
+
+<div>
+  <h3>チャイルドシート</h3>
+</div>
+  <%= link_to item_path(item.id) do %>
+  <div class='baby-photo-btn'>
+    <%= image_tag item.image, class: "baby-img" %>
+  </div>
+  <% end %>
+
+<% end %>
+
+<% @item8.each do |item| %>
+
+<div>
+  <h3>ベビーカー</h3>
+</div>
+  <%= link_to item_path(item.id) do %>
+  <div class='baby-photo-btn'>
+    <%= image_tag item.image, class: "baby-img" %>
+  </div>
+  <% end %>
+
+<% end %>
+
+<% @item9.each do |item| %>
+
+<div>
+  <h3>本</h3>
+</div>
+  <%= link_to item_path(item.id) do %>
+  <div class='baby-photo-btn'>
+    <%= image_tag item.image, class: "baby-img" %>
+  </div>
+  <% end %>
+
+<% end %>
+
+<% @item10.each do |item| %>
+
+<div>
+  <h3>その他</h3>
+</div>
+  <%= link_to item_path(item.id) do %>
+  <div class='baby-photo-btn'>
+    <%= image_tag item.image, class: "baby-img" %>
+  </div>
+  <% end %>
+
+<% end %>
+
+</div>
 
 </div>
 
