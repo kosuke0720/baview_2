@@ -162,8 +162,7 @@ has_many :messages
 |Column          |Type        |Options                         |
 |----------------|------------|--------------------------------|
 |order_id        |references  |null: false, foreign_key: true  |
-|order_id        |references  |null: false, foreign_key: true  |
-|message         |references  |null: false                     |
+|message         |text        |null: false                     |
 
 has_one :rooms  
 belongs_to :user  
