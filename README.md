@@ -163,6 +163,7 @@ has_many :messages
 |----------------|------------|--------------------------------|
 |order_id        |references  |null: false, foreign_key: true  |
 |message         |text        |null: false                     |
+|user_id         |references  |null: false, foreign_key: true  |
 
 has_one :rooms  
 belongs_to :user  
